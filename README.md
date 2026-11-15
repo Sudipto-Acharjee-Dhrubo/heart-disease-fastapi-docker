@@ -1,10 +1,21 @@
 # Heart Disease Prediction API (FastAPI + Docker + Render)
 
-A machine learning microservice built with **FastAPI**, containerized using **Docker** and **Docker Compose**, and configured for deployment to **Render** (or any cloud container hosting platform). The service serves predictions from a trained classifier predicting the presence or absence of heart disease based on patient diagnostic features.
+A machine learning microservice built with **FastAPI**, containerized using **Docker** and **Docker Compose**, and deployed to **Render**. The service serves predictions from a trained classifier predicting the presence or absence of heart disease based on clinical diagnostic features.
+
+[![Render Deployment](https://img.shields.io/badge/Render-Live%20Deployment-success?style=for-the-badge&logo=render)](https://heart-disease-fastapi-docker-idbe.onrender.com/docs)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+### 🌐 Live Deployment Links
+- **Interactive Swagger UI (API Docs)**: [https://heart-disease-fastapi-docker-idbe.onrender.com/docs](https://heart-disease-fastapi-docker-idbe.onrender.com/docs)
+- **Base Service URL**: [https://heart-disease-fastapi-docker-idbe.onrender.com](https://heart-disease-fastapi-docker-idbe.onrender.com)
+- **Health Check Endpoint**: [https://heart-disease-fastapi-docker-idbe.onrender.com/health](https://heart-disease-fastapi-docker-idbe.onrender.com/health)
+- **Model Info Endpoint**: [https://heart-disease-fastapi-docker-idbe.onrender.com/info](https://heart-disease-fastapi-docker-idbe.onrender.com/info)
 
 ---
 
 ## 📋 Table of Contents
+- [Live Deployment Links](#-live-deployment-links)
 - [Project Overview](#project-overview)
 - [Repository Structure](#repository-structure)
 - [Dataset & Machine Learning Model](#dataset--machine-learning-model)
@@ -78,7 +89,8 @@ python train.py
 ## 🔌 API Endpoints & Documentation
 
 Interactive API documentation (Swagger UI) is available at:
-`http://localhost:8000/docs` (or `<DEPLOYED_URL>/docs` on Render).
+- **Live on Render**: [https://heart-disease-fastapi-docker-idbe.onrender.com/docs](https://heart-disease-fastapi-docker-idbe.onrender.com/docs)
+- **Local**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -218,11 +230,11 @@ Interactive API documentation (Swagger UI) is available at:
 
 ---
 
-## 🧪 Sample curl Requests
+## 🧪 Sample curl Requests (Live API)
 
 ### 1. Health Check
 ```bash
-curl -X GET "https://<YOUR_RENDER_URL>/health"
+curl -X GET "https://heart-disease-fastapi-docker-idbe.onrender.com/health"
 ```
 **Expected Response:**
 ```json
@@ -231,12 +243,12 @@ curl -X GET "https://<YOUR_RENDER_URL>/health"
 
 ### 2. Model Info
 ```bash
-curl -X GET "https://<YOUR_RENDER_URL>/info"
+curl -X GET "https://heart-disease-fastapi-docker-idbe.onrender.com/info"
 ```
 
 ### 3. Predict (Positive / Disease Present)
 ```bash
-curl -X POST "https://<YOUR_RENDER_URL>/predict" \
+curl -X POST "https://heart-disease-fastapi-docker-idbe.onrender.com/predict" \
   -H "Content-Type: application/json" \
   -d '{
     "age": 63,
@@ -257,7 +269,7 @@ curl -X POST "https://<YOUR_RENDER_URL>/predict" \
 
 ### 4. Predict (Negative / Disease Absent)
 ```bash
-curl -X POST "https://<YOUR_RENDER_URL>/predict" \
+curl -X POST "https://heart-disease-fastapi-docker-idbe.onrender.com/predict" \
   -H "Content-Type: application/json" \
   -d '{
     "age": 57,

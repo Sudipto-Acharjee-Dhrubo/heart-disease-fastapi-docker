@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  heart-disease-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: heart-disease-prediction-api:latest
+    container_name: heart_disease_api
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    restart: unless-stopped

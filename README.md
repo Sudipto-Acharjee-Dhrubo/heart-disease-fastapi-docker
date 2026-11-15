@@ -20,9 +20,6 @@ A machine learning microservice built with **FastAPI**, containerized using **Do
 - [Repository Structure](#repository-structure)
 - [Dataset & Machine Learning Model](#dataset--machine-learning-model)
 - [API Endpoints & Documentation](#api-endpoints--documentation)
-- [Local Development & Testing](#local-development--testing)
-  - [Option 1: Using Python Environment](#option-1-using-python-environment)
-  - [Option 2: Using Docker Compose](#option-2-using-docker-compose)
 - [Deployment on Render (Step-by-Step)](#deployment-on-render-step-by-step)
 - [Sample curl Requests](#sample-curl-requests)
 
@@ -89,8 +86,7 @@ python train.py
 ## 🔌 API Endpoints & Documentation
 
 Interactive API documentation (Swagger UI) is available at:
-- **Live on Render**: [https://heart-disease-fastapi-docker-idbe.onrender.com/docs](https://heart-disease-fastapi-docker-idbe.onrender.com/docs)
-- **Local**: [http://localhost:8000/docs](http://localhost:8000/docs)
+[https://heart-disease-fastapi-docker-idbe.onrender.com/docs](https://heart-disease-fastapi-docker-idbe.onrender.com/docs)
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -126,68 +122,6 @@ Interactive API documentation (Swagger UI) is available at:
   "probability": 0.62
 }
 ```
-
----
-
-## 💻 Local Development & Testing
-
-### Option 1: Using Python Environment
-
-1. **Clone the repository**:
-   ```bash
-   git clone <YOUR_GITHUB_REPO_URL>
-   cd <REPO_NAME>
-   ```
-
-2. **Create and activate a virtual environment**:
-   ```bash
-   python -m venv venv
-   # Windows:
-   venv\Scripts\activate
-   # Linux/macOS:
-   source venv/bin/activate
-   ```
-
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the FastAPI app with Uvicorn**:
-   ```bash
-   uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-   ```
-
-5. **Visit Swagger UI**:
-   Open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser.
-
----
-
-### Option 2: Using Docker & Docker Compose
-
-1. **Build the Docker container**:
-   ```bash
-   docker-compose build
-   ```
-
-2. **Run the container**:
-   ```bash
-   docker-compose up
-   ```
-   *(Add `-d` flag to run in detached background mode)*
-
-3. **Verify the container is running**:
-   ```bash
-   docker ps
-   ```
-
-4. **Access Swagger UI**:
-   Open [http://localhost:8000/docs](http://localhost:8000/docs).
-
-5. **Stop the container**:
-   ```bash
-   docker-compose down
-   ```
 
 ---
 

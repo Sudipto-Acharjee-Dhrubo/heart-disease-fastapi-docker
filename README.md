@@ -20,7 +20,6 @@ A machine learning microservice built with **FastAPI**, containerized using **Do
 - [Repository Structure](#repository-structure)
 - [Dataset & Machine Learning Model](#dataset--machine-learning-model)
 - [API Endpoints & Documentation](#api-endpoints--documentation)
-- [Deployment on Render (Step-by-Step)](#deployment-on-render-step-by-step)
 - [Sample curl Requests](#sample-curl-requests)
 
 ---
@@ -122,45 +121,6 @@ Interactive API documentation (Swagger UI) is available at:
   "probability": 0.62
 }
 ```
-
----
-
-## ☁️ Deployment on Render (Step-by-Step)
-
-1. **Push your code to GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Heart disease prediction FastAPI service with Docker"
-   git branch -M main
-   git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
-   git push -u origin main
-   ```
-
-2. **Log in to Render**:
-   - Go to [https://render.com](https://render.com) and sign in (using GitHub).
-
-3. **Create a New Web Service**:
-   - Click **New +** > **Web Service**.
-   - Select **Build and deploy from a Git repository**.
-   - Connect your GitHub repository.
-
-4. **Configure the Service**:
-   - **Name**: `heart-disease-prediction-api` (or your preferred name)
-   - **Region**: Choose the closest region (e.g., Oregon, Frankfurt, Singapore)
-   - **Language / Environment**: Select **Docker**
-   - **Branch**: `main`
-   - **Root Directory**: Leave blank (root of repository)
-   - **Instance Type**: **Free**
-
-5. **Deploy**:
-   - Click **Deploy Web Service**.
-   - Render will automatically build the image using the `Dockerfile` and start the Uvicorn server binding to `0.0.0.0:$PORT`.
-   - Monitor the **Logs** tab until you see `Uvicorn running on http://0.0.0.0:...` and the status becomes **Live**.
-
-6. **Verify the Live Service**:
-   - Open `<YOUR_RENDER_URL>/docs` to view Swagger UI.
-   - Test endpoints with `curl` or Postman.
 
 ---
 
